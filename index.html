@@ -43,7 +43,7 @@
       background:
         linear-gradient(90deg,rgba(0,0,0,.93) 0%,rgba(0,0,0,.42) 45%,rgba(0,0,0,.16) 75%),
         linear-gradient(0deg,#070707 0%,transparent 35%),
-        url("hero.jpg") center 28%/cover no-repeat;
+        url("hero.jpg") center center/cover no-repeat;
       padding:120px 0 72px;
     }
     .hero-content{max-width:850px}
@@ -87,7 +87,8 @@
     .act:hover{transform:translateY(-3px);border-color:#555}
     .act .time{font-family:Georgia,serif;font-size:18px;color:#e8e1d9}
     .act .band{font-weight:800;font-size:clamp(20px,2.1vw,31px);letter-spacing:.02em}
-    .act.epm .band{font-family:"Segoe Print","Comic Sans MS",cursive;font-style:italic;font-size:40px}
+    .act.epm .band{display:flex;align-items:flex-end;min-height:92px}
+    .epm-logo{display:block;width:min(190px,90%);height:auto;object-fit:contain;object-position:left bottom}
     .act.yumi .band{color:#ff74bd}
     .act.jane .band{color:#ff9a31}
     .act.rain .band{color:#d3c5c5}
@@ -114,7 +115,7 @@
     .reveal.visible{opacity:1;transform:none}
 
     @media(max-width:850px){
-      .hero{min-height:700px;background-position:60% 30%}
+      .hero{min-height:700px;background-position:center center}
       .links{display:none}
       .event-bar{display:grid;grid-template-columns:1fr 1fr}
       .event-item{min-height:90px}
@@ -136,7 +137,8 @@
       .act{min-height:145px;padding:16px}
       .act .time{font-size:15px}
       .act .band{font-size:20px}
-      .act.epm .band{font-size:29px}
+      .act.epm .band{min-height:70px}
+      .epm-logo{width:min(135px,95%)}
       section{padding:58px 0}
       .info-card{padding:24px}
       .details{grid-template-columns:1fr;gap:2px}
@@ -183,7 +185,7 @@
         <h2 class="section-title reveal">Time Table</h2>
         <div class="timetable">
           <article class="act reveal"><span class="num">01</span><div class="time">15:00–15:30</div><div class="band">LFLD</div></article>
-          <article class="act epm reveal"><span class="num">02</span><div class="time">15:30–16:00</div><div class="band">EPM</div></article>
+          <article class="act epm reveal"><span class="num">02</span><div class="time">15:30–16:00</div><div class="band"><img class="epm-logo" src="epm-logo.png" alt="EPM — ENJOY PLAY MUSIC"></div></article>
           <article class="act yumi reveal"><span class="num">03</span><div class="time">16:00–16:50</div><div class="band">昭和歌謡<br>Yumickey</div></article>
           <article class="act jane reveal"><span class="num">04</span><div class="time">16:50–17:40</div><div class="band">JANE DOE</div></article>
           <article class="act reveal"><span class="num">05</span><div class="time">17:50–18:40</div><div class="band">Singularity</div></article>
@@ -199,20 +201,24 @@
         <h2 class="section-title reveal">Venue / Access</h2>
         <div class="info-grid">
           <article class="info-card reveal">
-            <div class="meta">LIVE HOUSE</div>
-            <h3>TOKIO TOKYO</h3>
-            <p>渋谷駅から徒歩圏内のライブハウス。イベント当日はチケットをご用意のうえご来場ください。</p>
+            <div class="meta">TICKET</div>
+            <h3>チケットについて</h3>
+            <p>当イベントのチケットは当日、会場にてお支払いください。</p>
             <dl class="details">
-              <dt>DATE</dt><dd>2026年11月8日（日）</dd>
-              <dt>OPEN / START</dt><dd>14:30 / 15:00</dd>
-              <dt>TICKET</dt><dd>¥1,000 + 1 drink ¥600</dd>
+              <dt>料金</dt><dd>¥1,000 + 1 drink ¥600</dd>
+              <dt>支払い方法</dt><dd>当日、会場にて現金でお支払いください。</dd>
+              <dt>開場時間</dt><dd>14:30</dd>
+              <dt>開演時間</dt><dd>15:00</dd>
             </dl>
           </article>
+
           <article class="info-card reveal">
-            <div class="meta">ACCESS</div>
-            <h3>Shibuya, Tokyo</h3>
-            <p>〒150-0042<br>東京都渋谷区宇田川町3-7 B1</p>
-            <p class="meta">JR線・東京メトロ 渋谷駅より徒歩5分</p>
+            <div class="meta">VENUE / ACCESS</div>
+            <h3>TOKIO TOKYO</h3>
+            <dl class="details">
+              <dt>住所</dt><dd>〒150-0042<br>東京都渋谷区宇田川町3-7 B1</dd>
+              <dt>アクセス</dt><dd>JR線・東京メトロ 渋谷駅より徒歩5分</dd>
+            </dl>
             <div class="button-row">
               <a class="btn primary" href="https://tokio.world/" target="_blank" rel="noopener">TOKIO TOKYO OFFICIAL</a>
               <a class="btn" href="https://www.google.com/maps/search/?api=1&query=TOKIO+TOKYO+東京都渋谷区宇田川町3-7" target="_blank" rel="noopener">OPEN MAP</a>
