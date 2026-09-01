@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#070707" />
+  <meta name="description" content="ROCK WILL NEVER DIE vol.6 — 2026年11月8日(日) TOKIO TOKYO" />
+  <title>ROCK WILL NEVER DIE vol.6</title>
+  <style>
+    :root{
+      --bg:#070707;
+      --panel:#0d0d0d;
+      --line:#242424;
+      --text:#f6f2ea;
+      --muted:#aaa49b;
+      --accent:#ed6900;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      line-height:1.65;
+    }
+    a{color:inherit}
+    .wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+    .nav{
+      position:fixed;z-index:20;top:0;left:0;right:0;
+      background:rgba(6,6,6,.78);backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav .inner{height:64px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:900;letter-spacing:.09em;font-size:15px;text-decoration:none}
+    .links{display:flex;gap:24px;font-size:12px;letter-spacing:.12em}
+    .links a{text-decoration:none;color:#ddd}
+    .links a:hover{color:var(--accent)}
+
+    .hero{
+      min-height:760px;display:flex;align-items:flex-end;position:relative;
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.93) 0%,rgba(0,0,0,.42) 45%,rgba(0,0,0,.16) 75%),
+        linear-gradient(0deg,#070707 0%,transparent 35%),
+        url("hero.jpg") center 28%/cover no-repeat;
+      padding:120px 0 72px;
+    }
+    .hero-content{max-width:850px}
+    .eyebrow{font-size:12px;letter-spacing:.28em;color:#ddd;text-transform:uppercase;margin-bottom:16px}
+    h1{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(52px,9.5vw,122px);
+      line-height:.88;letter-spacing:-.045em;margin:0 0 28px;font-weight:400;
+    }
+    h1 .accent{color:var(--accent)}
+    .vol{font-size:.33em;letter-spacing:0;margin-left:.13em;white-space:nowrap}
+    .event-bar{
+      display:flex;align-items:stretch;max-width:960px;
+      background:var(--accent);color:#fff;border-radius:18px;overflow:hidden;
+      box-shadow:0 15px 50px rgba(0,0,0,.32);
+    }
+    .event-item{padding:17px 22px;display:flex;flex-direction:column;justify-content:center}
+    .event-item+.event-item{border-left:1px solid rgba(255,255,255,.35)}
+    .date{font-family:Georgia,serif;font-size:38px;line-height:1}
+    .smallcaps{font-size:11px;letter-spacing:.15em;margin-top:5px}
+    .event-main{font-family:Georgia,serif;font-size:25px;line-height:1.2}
+    .ticket{margin-left:auto}
+    .ticket b{font-size:22px;font-family:Georgia,serif;font-weight:400}
+    .ticket span{font-size:13px}
+
+    section{padding:82px 0}
+    .section-title{
+      margin:0 0 34px;font-size:14px;letter-spacing:.19em;text-transform:uppercase;
+      display:flex;align-items:center;gap:14px;
+    }
+    .section-title:before{content:"";width:42px;height:3px;background:var(--accent)}
+    .timetable{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+    }
+    .act{
+      min-height:190px;background:linear-gradient(145deg,#111,#080808);
+      border:1px solid var(--line);padding:22px;position:relative;
+      display:flex;flex-direction:column;justify-content:space-between;
+      transition:.22s transform,.22s border-color;
+    }
+    .act:hover{transform:translateY(-3px);border-color:#555}
+    .act .time{font-family:Georgia,serif;font-size:18px;color:#e8e1d9}
+    .act .band{font-weight:800;font-size:clamp(20px,2.1vw,31px);letter-spacing:.02em}
+    .act.epm .band{font-family:"Segoe Print","Comic Sans MS",cursive;font-style:italic;font-size:40px}
+    .act.yumi .band{color:#ff74bd}
+    .act.jane .band{color:#ff9a31}
+    .act.rain .band{color:#d3c5c5}
+    .act .num{position:absolute;right:16px;top:13px;color:#333;font-size:26px;font-weight:900}
+
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .info-card{border:1px solid var(--line);background:var(--panel);padding:34px}
+    .info-card h3{font-family:Georgia,serif;font-size:34px;font-weight:400;margin:0 0 8px}
+    .meta{color:var(--muted);font-size:14px}
+    .details{display:grid;grid-template-columns:135px 1fr;gap:9px 16px;margin-top:24px;font-size:14px}
+    .details dt{color:var(--muted)}
+    .details dd{margin:0}
+    .button-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+    .btn{
+      display:inline-block;text-decoration:none;border:1px solid #4b4b4b;padding:12px 17px;
+      font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    }
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:white}
+    .btn:hover{filter:brightness(1.12)}
+
+    .footer{padding:35px 0 52px;border-top:1px solid var(--line);color:#777;font-size:12px}
+    .footer .wrap{display:flex;justify-content:space-between;gap:20px}
+    .reveal{opacity:0;transform:translateY(18px);transition:.7s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media(max-width:850px){
+      .hero{min-height:700px;background-position:60% 30%}
+      .links{display:none}
+      .event-bar{display:grid;grid-template-columns:1fr 1fr}
+      .event-item{min-height:90px}
+      .event-item+.event-item{border-left:0;border-top:1px solid rgba(255,255,255,.32)}
+      .ticket{margin-left:0}
+      .timetable{grid-template-columns:repeat(2,1fr)}
+      .info-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:520px){
+      .wrap{width:min(var(--max),calc(100% - 24px))}
+      .hero{min-height:680px;padding-bottom:45px}
+      h1{font-size:56px}
+      .vol{display:block;margin:.22em 0 0;font-size:.32em}
+      .event-bar{grid-template-columns:1fr}
+      .event-item{padding:14px 17px;min-height:auto}
+      .date{font-size:31px}
+      .event-main{font-size:21px}
+      .timetable{grid-template-columns:1fr 1fr;gap:8px}
+      .act{min-height:145px;padding:16px}
+      .act .time{font-size:15px}
+      .act .band{font-size:20px}
+      .act.epm .band{font-size:29px}
+      section{padding:58px 0}
+      .info-card{padding:24px}
+      .details{grid-template-columns:1fr;gap:2px}
+      .details dd{margin-bottom:10px}
+      .footer .wrap{display:block}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap inner">
+      <a class="brand" href="#top">ROCK WILL NEVER DIE <span style="color:#ed6900">vol.6</span></a>
+      <nav class="links" aria-label="メインナビゲーション">
+        <a href="#timetable">TIME TABLE</a>
+        <a href="#venue">VENUE</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-content">
+        <div class="eyebrow">TOKIO TOKYO · 08 NOV 2026</div>
+        <h1>ROCK WILL<br><span class="accent">NEVER</span> DIE <span class="vol">vol.6</span></h1>
+        <div class="event-bar" aria-label="イベント基本情報">
+          <div class="event-item">
+            <div class="date">11/08</div>
+            <div class="smallcaps">SUN · 2026</div>
+          </div>
+          <div class="event-item">
+            <div class="event-main">OPEN 14:30</div>
+            <div class="smallcaps">START 15:00</div>
+          </div>
+          <div class="event-item ticket">
+            <b>TICKET ¥1,000</b>
+            <span>+ 1 drink ¥600</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timetable">
+      <div class="wrap">
+        <h2 class="section-title reveal">Time Table</h2>
+        <div class="timetable">
+          <article class="act reveal"><span class="num">01</span><div class="time">15:00–15:30</div><div class="band">LFLD</div></article>
+          <article class="act epm reveal"><span class="num">02</span><div class="time">15:30–16:00</div><div class="band">EPM</div></article>
+          <article class="act yumi reveal"><span class="num">03</span><div class="time">16:00–16:50</div><div class="band">昭和歌謡<br>Yumickey</div></article>
+          <article class="act jane reveal"><span class="num">04</span><div class="time">16:50–17:40</div><div class="band">JANE DOE</div></article>
+          <article class="act reveal"><span class="num">05</span><div class="time">17:50–18:40</div><div class="band">Singularity</div></article>
+          <article class="act reveal"><span class="num">06</span><div class="time">18:40–19:30</div><div class="band">The Arfee</div></article>
+          <article class="act reveal"><span class="num">07</span><div class="time">19:40–20:30</div><div class="band">MEU</div></article>
+          <article class="act rain reveal"><span class="num">08</span><div class="time">20:30–21:20</div><div class="band">RAIN</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="venue">
+      <div class="wrap">
+        <h2 class="section-title reveal">Venue / Access</h2>
+        <div class="info-grid">
+          <article class="info-card reveal">
+            <div class="meta">LIVE HOUSE</div>
+            <h3>TOKIO TOKYO</h3>
+            <p>渋谷駅から徒歩圏内のライブハウス。イベント当日はチケットをご用意のうえご来場ください。</p>
+            <dl class="details">
+              <dt>DATE</dt><dd>2026年11月8日（日）</dd>
+              <dt>OPEN / START</dt><dd>14:30 / 15:00</dd>
+              <dt>TICKET</dt><dd>¥1,000 + 1 drink ¥600</dd>
+            </dl>
+          </article>
+          <article class="info-card reveal">
+            <div class="meta">ACCESS</div>
+            <h3>Shibuya, Tokyo</h3>
+            <p>〒150-0042<br>東京都渋谷区宇田川町3-7 B1</p>
+            <p class="meta">JR線・東京メトロ 渋谷駅より徒歩5分</p>
+            <div class="button-row">
+              <a class="btn primary" href="https://tokio.world/" target="_blank" rel="noopener">TOKIO TOKYO OFFICIAL</a>
+              <a class="btn" href="https://www.google.com/maps/search/?api=1&query=TOKIO+TOKYO+東京都渋谷区宇田川町3-7" target="_blank" rel="noopener">OPEN MAP</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>ROCK WILL NEVER DIE vol.6</span>
+      <span>2026.11.08 · TOKIO TOKYO</span>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
