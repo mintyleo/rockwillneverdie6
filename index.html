@@ -43,7 +43,7 @@
       background:
         linear-gradient(90deg,rgba(0,0,0,.93) 0%,rgba(0,0,0,.42) 45%,rgba(0,0,0,.16) 75%),
         linear-gradient(0deg,#070707 0%,transparent 35%),
-        url("hero.jpg") center center/cover no-repeat;
+        url("hero.jpg") center center/auto 86% no-repeat;
       padding:120px 0 72px;
     }
     .hero-content{max-width:850px}
@@ -298,6 +298,23 @@
       .hero-venue-line{gap:9px;margin-bottom:18px}
       .hero-venue-logo{width:118px;max-width:38vw}
       .hero-date{font-size:11px;letter-spacing:.15em}
+    }
+
+  
+    /* Hero image: slightly zoomed out for a wider, sharper view */
+    @media(min-width:851px){
+      .hero{
+        background-size:auto, auto, auto 86%;
+        background-position:center, center, center center;
+        background-repeat:no-repeat;
+      }
+    }
+    @media(max-width:850px){
+      .hero{
+        background-size:auto, auto, auto 72%;
+        background-position:center, center, center 46%;
+        background-repeat:no-repeat;
+      }
     }
 
   </style>
