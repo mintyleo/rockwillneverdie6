@@ -87,8 +87,9 @@
     .act:hover{transform:translateY(-3px);border-color:#555}
     .act .time{font-family:Georgia,serif;font-size:18px;color:#e8e1d9}
     .act .band{font-weight:800;font-size:clamp(20px,2.1vw,31px);letter-spacing:.02em}
-    .act.epm .band{display:flex;align-items:flex-end;min-height:92px}
-    .epm-logo{display:block;width:min(190px,90%);height:auto;object-fit:contain;object-position:left bottom}
+    .act .band{display:flex;align-items:center;min-height:92px}
+    .band-logo{display:block;max-width:92%;max-height:95px;width:auto;height:auto;object-fit:contain;object-position:left center}
+    .epm-logo{display:block;max-width:92%;max-height:95px;width:auto;height:auto;object-fit:contain;object-position:left center}
     .act.yumi .band{color:#ff74bd}
     .act.jane .band{color:#ff9a31}
     .act.rain .band{color:#d3c5c5}
@@ -137,8 +138,8 @@
       .act{min-height:145px;padding:16px}
       .act .time{font-size:15px}
       .act .band{font-size:20px}
-      .act.epm .band{min-height:70px}
-      .epm-logo{width:min(135px,95%)}
+      .act .band{min-height:70px}
+      .band-logo,.epm-logo{max-width:95%;max-height:72px}
       section{padding:58px 0}
       .info-card{padding:24px}
       .details{grid-template-columns:1fr;gap:2px}
@@ -184,14 +185,14 @@
       <div class="wrap">
         <h2 class="section-title reveal">Time Table</h2>
         <div class="timetable">
-          <article class="act reveal"><span class="num">01</span><div class="time">15:00–15:30</div><div class="band">LFLD</div></article>
+          <article class="act reveal"><span class="num">01</span><div class="time">15:00–15:30</div><div class="band"><img class="band-logo" src="lfld.png" alt="LFLD"></div></article>
           <article class="act epm reveal"><span class="num">02</span><div class="time">15:30–16:00</div><div class="band"><img class="epm-logo" src="epm-logo.png" alt="EPM — ENJOY PLAY MUSIC"></div></article>
-          <article class="act yumi reveal"><span class="num">03</span><div class="time">16:00–16:50</div><div class="band">昭和歌謡<br>Yumickey</div></article>
-          <article class="act jane reveal"><span class="num">04</span><div class="time">16:50–17:40</div><div class="band">JANE DOE</div></article>
-          <article class="act reveal"><span class="num">05</span><div class="time">17:50–18:40</div><div class="band">Singularity</div></article>
-          <article class="act reveal"><span class="num">06</span><div class="time">18:40–19:30</div><div class="band">The Arfee</div></article>
-          <article class="act reveal"><span class="num">07</span><div class="time">19:40–20:30</div><div class="band">MEU</div></article>
-          <article class="act rain reveal"><span class="num">08</span><div class="time">20:30–21:20</div><div class="band">RAIN</div></article>
+          <article class="act reveal"><span class="num">03</span><div class="time">16:00–16:50</div><div class="band"><img class="band-logo" src="yumickey.png" alt="昭和歌謡 Yumickey"></div></article>
+          <article class="act reveal"><span class="num">04</span><div class="time">16:50–17:40</div><div class="band"><img class="band-logo" src="jane-doe.png" alt="JANE DOE"></div></article>
+          <article class="act reveal"><span class="num">05</span><div class="time">17:50–18:40</div><div class="band"><img class="band-logo" src="singularity.png" alt="Singularity"></div></article>
+          <article class="act reveal"><span class="num">06</span><div class="time">18:40–19:30</div><div class="band"><img class="band-logo" src="the-arfee.png" alt="The Arfee"></div></article>
+          <article class="act reveal"><span class="num">07</span><div class="time">19:40–20:30</div><div class="band"><img class="band-logo" src="meu.png" alt="MEU"></div></article>
+          <article class="act reveal"><span class="num">08</span><div class="time">20:30–21:20</div><div class="band"><img class="band-logo" src="rain.png" alt="RAIN"></div></article>
         </div>
       </div>
     </section>
@@ -203,7 +204,7 @@
           <article class="info-card reveal">
             <div class="meta">TICKET</div>
             <h3>¥1,000 + 1 drink ¥600</h3>
-            <p>当イベントのチケットは当日、会場にてお支払いください。</p>
+            <p>当イベントのチケット代は当日、会場にてお支払いください。</p>
             <dl class="details">
               <dt>開場時間</dt><dd>14:30</dd>
               <dt>開演時間</dt><dd>15:00</dd>
